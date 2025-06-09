@@ -30,7 +30,9 @@ public class WorkbookController : ControllerBase
     [HttpPost("calculate")]
     public async Task<IActionResult> Calculate([FromBody] CalculationRequest req)
     {
-        var inputs = req.Inputs ?? new Dictionary<string, object>();
+        var inputs = req.Inputs != null
+            ? req.Inputs
+            : new Dictionary<string, object>();
         var outputs = await _calcService.CalculateAsync(req.FilePath, inputs);
         return Ok(outputs);
     }
