@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace BackendCalculationService.Models;
 
 public class CalculationRequest

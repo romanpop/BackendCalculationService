@@ -26,9 +26,4 @@ public class WorkbookStorageService
     {
         return new FileInfo(Path.Combine(_storagePath, filename));
     }
-
-    internal async Task SaveAsync(IFormFile file)
-    {
-        throw new NotImplementedException();
-    }
 }
