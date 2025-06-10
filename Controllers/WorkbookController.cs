@@ -23,7 +23,7 @@ public class WorkbookController : ControllerBase
     [HttpPost("upload")]
     public async Task<IActionResult> Upload(IFormFile file)
     {
-        var path = await _storageService.SaveAsync(file).ConfigureAwait(false);
+        var path = await _storageService.SaveFileAsync(file).ConfigureAwait(false);
         return Ok(new { FilePath = path });
     }
 
