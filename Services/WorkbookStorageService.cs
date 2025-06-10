@@ -14,7 +14,7 @@ public class WorkbookStorageService
         Directory.CreateDirectory(_storagePath);
     }
 
-    public async Task<string> SaveAsync(IFormFile file)
+    public async Task<string> SaveFileAsync(IFormFile file)
     {
         var filePath = Path.Combine(_storagePath, file.FileName);
         using var stream = new FileStream(filePath, FileMode.Create);
